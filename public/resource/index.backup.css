@@ -1,0 +1,131 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat";
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  /* background-color: rgb(0, 0, 255, 0.7); */
+}
+.backgroundImage {
+  /* position: sticky; */
+  background-image: url(background.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: blur(2px);
+  width: 100%;
+  height: 100vh;
+}
+.centeredForm {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  height: 50vh;
+  position: absolute;
+}
+
+/* ------------------ left Side-------------------- */
+.left {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(240, 240, 240, 0.9);
+  border-radius: 7px 0 0 7px;
+  height: 70vh;
+
+  /* border-radius: 0 5% 5% 0; */
+}
+.left .signForm {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+}
+.signForm h2 {
+  text-align: center;
+}
+.left .signForm label {
+  font-size: 0.8em;
+  font-weight: 700;
+  margin-bottom: 1.5vh;
+}
+
+.left .signForm input {
+  padding: 8px;
+  border: none;
+  border-radius: 4px;
+}
+
+.left .signForm .form-btn {
+  background-color: rgb(0, 19, 194);
+  cursor: pointer;
+  color: white;
+}
+
+.left .signForm .form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 3vh;
+}
+
+.left h2 {
+  font-size: 1.8em;
+  font-weight: 600;
+  margin-bottom: 5vh;
+}
+
+/* ------------------ Right Side-------------------- */
+
+.right {
+  width: 100%;
+  background-color: rgba(3, 12, 97, 0.9);
+  border-radius: 0 7px 7px 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.right .caption {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 75%;
+}
+
+.right * {
+  color: white;
+}
+
+.right .caption h2 {
+  margin-bottom: 20px;
+  font-size: 2em;
+  font-weight: 800;
+}
+
+.right .caption p {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.right a {
+  border: 1px solid white;
+  color: white;
+}
+
+.right a:hover {
+  border: 1px solid white;
+  background-color: white;
+  color: rgba(3, 12, 97);
+}
+

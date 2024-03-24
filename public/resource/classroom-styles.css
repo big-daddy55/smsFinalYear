@@ -1,0 +1,84 @@
+svg#freepik_stories-classroom:not(.animated) .animable {
+  opacity: 0;
+}
+svg#freepik_stories-classroom.animated #freepik--Floor--inject-3 {
+  animation: 1.5s Infinite linear floating;
+  animation-delay: 0s;
+}
+svg#freepik_stories-classroom.animated #freepik--Plants--inject-3 {
+  animation: 1.5s Infinite linear floating;
+  animation-delay: 0s;
+}
+svg#freepik_stories-classroom.animated #freepik--Walls--inject-3 {
+  animation: 1.5s Infinite linear floating;
+  animation-delay: 0s;
+}
+svg#freepik_stories-classroom.animated #freepik--Windows--inject-3 {
+  animation: 1.5s Infinite linear floating;
+  animation-delay: 0s;
+}
+svg#freepik_stories-classroom.animated #freepik--Shelving--inject-3 {
+  animation: 1.5s Infinite linear floating;
+  animation-delay: 0s;
+}
+svg#freepik_stories-classroom.animated #freepik--Clock--inject-3 {
+  animation: 1.5s Infinite linear floating;
+  animation-delay: 0s;
+}
+svg#freepik_stories-classroom.animated #freepik--Blackboard--inject-3 {
+  animation: 1.5s Infinite linear floating;
+  animation-delay: 0s;
+}
+svg#freepik_stories-classroom.animated #freepik--Poster--inject-3 {
+  animation: 1.5s Infinite linear floating;
+  animation-delay: 0s;
+}
+svg#freepik_stories-classroom.animated #freepik--Chair--inject-3 {
+  animation: 1.5s Infinite linear floating;
+  animation-delay: 0s;
+}
+svg#freepik_stories-classroom.animated #freepik--Desk--inject-3 {
+  animation: 1.5s Infinite linear floating;
+  animation-delay: 0s;
+}
+svg#freepik_stories-classroom.animated #freepik--seat-3--inject-3 {
+  animation: ;
+  animation-delay: ;
+}
+svg#freepik_stories-classroom.animated #freepik--seat-2--inject-3 {
+  animation: ;
+  animation-delay: ;
+}
+svg#freepik_stories-classroom.animated #freepik--seat-1--inject-3 {
+  animation: ;
+  animation-delay: ;
+}
+svg#freepik_stories-classroom.animated #freepik--Tables--inject-3 {
+  animation: 1.5s Infinite linear floating;
+  animation-delay: 0s;
+}
+svg#freepik_stories-classroom.animated #freepik--Character--inject-3 {
+  animation: 1s 1 forwards cubic-bezier(0.36, -0.01, 0.5, 1.38) fadeIn;
+  animation-delay: 0s;
+}
+@keyframes floating {
+  0% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

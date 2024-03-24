@@ -1,0 +1,43 @@
+<?php
+
+use Core\Database;
+
+$db = new Database();
+
+$grades = $db->query('SELECT * FROM grades')->findAll();
+
+// if (isset($_GET['alert'])) {
+//     $alert = $_GET['alert'];
+// }
+
+$alert = isset($_GET['alert']) ? urldecode($_GET['alert']) : NULL;
+
+
+
+$title = 'Add Teacher';
+
+view('partials/admin/head.php', [
+    'title' => $title
+]);
+
+view('partials/admin/side-nav.php', [
+    'grades' => $grades,
+    'name' => $_SESSION['user']['last_name'],
+    'user_type' => $_SESSION['user']['user_type']
+]);
+
+view('partials/admin/nav.php', [
+    'name' => $_SESSION['user']['last_name']
+]);
+
+if (isset($alert)) {
+    view('admin/teachers/create.view.php', [
+        'grades' => $grades,
+        'alert' => $alert
+    ]);
+} else {
+    view('admin/teachers/create.view.php', [
+        'grades' => $grades,
+    ]);
+}
+view('partials/footer.php');

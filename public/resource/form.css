@@ -1,0 +1,271 @@
+.centeredForm {
+  display: flex;
+  align-items: center;
+  height: 65vh;
+  /* position: absolute; */
+}
+.centeredForm::-webkit-scrollbar{
+  display: none;
+}
+
+/* .newTeacherForm .input-group{
+    margin: 10px 0;
+} */
+
+.newTeacherForm{
+    overflow-y: scroll;
+    overflow-x: hidden;
+    /* width: 40% !important; */
+    box-shadow: 1px 1px 5px 3px rgb(158, 158, 158, 0.2);
+    border-radius: 10px;
+    padding: 10px;
+}
+
+select:disabled{
+  background-color: rgba(233, 102, 102, 0.171)!important;
+  color: rgb(143, 143, 143);
+}
+
+.newTeacherForm .form-group{
+    width: 80%;
+    /* flex-direction: row!important; */
+    justify-content: space-between;
+}
+
+.newTeacherForm .form-group .form-input{
+  width: 100%;
+}
+
+.newTeacherForm h2{
+    margin-top: 40px;
+}
+
+
+
+.signForm {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+}
+.signForm h2 {
+  text-align: center;
+  font-size: 2em;
+  font-weight: 700;
+  margin-bottom: 1.5vh;
+}
+
+.signForm .upper {
+  margin-bottom: 4vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.heading-divider {
+  width: 50%;
+}
+
+.signForm .form-input {
+  border: none;
+  border-bottom: 1px solid rgba(187, 187, 187, 0.973);
+  outline: none;
+  padding: 8px;
+}
+
+.form-input:focus-visible {
+  /* outline: 1px solid rgba(226, 0, 0, 0.973)!important; */
+  border-bottom: 1.5px solid rgba(226, 0, 0) !important;
+}
+
+.signForm .form-btn {
+
+  background-color: rgba(226, 0, 0);
+  cursor: pointer;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 1vh 2vw;
+
+}
+
+.signForm .form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 4vh;
+}
+
+.checkbox {
+  display: flex;
+  margin-bottom: 4vh;
+}
+
+.checkbox p {
+  margin-left: 10px;
+}
+
+.divider {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 4vh 0;
+}
+
+.divider hr {
+  /* border: 4px solid rgba(187, 187, 187); */
+  background-color: rgba(187, 187, 187);
+  width: 40%;
+}
+
+.google-login {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  border: 2px solid rgba(187, 187, 187);
+  padding: 1vw;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.google-login:hover {
+  background-color: rgba(219, 130, 130, 0.3);
+  border: 2px solid rgba(219, 130, 130, 0.05);
+  transition: 0.5s ease;
+}
+
+.google-login i {
+  margin-right: 10px;
+}
+
+@media (max-width: 680px) {
+  .signForm .form-btn,
+  .google-login {
+    height: 6vh;
+    padding: 0;
+    font-size: 0.8em !important;
+    align-items: center;
+  }
+}
+
+@media (max-width: 550px) {
+  
+
+  .signForm {
+    max-height: 100%;
+    padding: 2px 0;
+  }
+
+  .signForm .form-group {
+    margin-bottom: 2vh;
+  }
+
+  .signForm h2 {
+    text-align: center;
+    font-size: 1.3em;
+    font-weight: 600;
+    margin-bottom: 0;
+  }
+
+  .signForm .upper {
+    margin-bottom: 0.7vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .signForm .form-input {
+    padding: 5px;
+  }
+
+  .heading-divider {
+    display: none;
+  }
+
+  .form-input::placeholder {
+    font-size: 0.75em !important;
+  }
+
+  .checkbox {
+    margin-bottom: 2vh;
+  }
+
+  .checkbox p {
+    font-size: 0.75em !important;
+  }
+
+  .divider {
+    margin: 2vh 0;
+  }
+
+  .signForm .form-btn,
+  .google-login {
+    height: 5vh;
+    padding: 0;
+    font-size: 0.75em !important;
+  }
+
+  .google-login {
+    align-items: center;
+  }
+}
+
+@media (max-width: 320px) {
+  .signForm {
+    max-height: 100%;
+    padding: 2px 0;
+  }
+
+  .signForm .form-group {
+    margin-bottom: 2vh;
+  }
+
+  .signForm h2 {
+    text-align: center;
+    font-size: 1.3em;
+    font-weight: 600;
+    margin-bottom: 0;
+  }
+
+  .signForm .upper {
+    margin-bottom: 0.7vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .signForm .form-input {
+    padding: 5px;
+  }
+
+  .heading-divider {
+    display: none;
+  }
+
+  .form-input::placeholder {
+    font-size: 0.75em !important;
+  }
+
+  .checkbox {
+    margin-bottom: 2vh;
+  }
+
+  .checkbox p {
+    font-size: 0.75em !important;
+  }
+
+  .divider {
+    margin: 2vh 0;
+  }
+
+  .signForm .form-btn,
+  .google-login {
+    height: 5vh;
+    padding: 0;
+    font-size: 0.75em !important;
+  }
+
+  .google-login {
+    align-items: center;
+  }
+}
