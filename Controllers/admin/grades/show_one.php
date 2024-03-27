@@ -9,34 +9,25 @@ $db = new Database();
 //     'grade_id' => $grade_id
 // ])->findAll();
 
+$class_id = $_GET['grade'];
+
+
+
 $students = $db->query("SELECT * FROM students WHERE class_id = :class_id", [
     'class_id' => $class_id
-]);
+])->findAll();
 
-$class_teachers = $db->query('SELECT * FROM class_teachers')->findAll();
 
-function teacher($user_number)
-{
-    $db = new Database();
-    return $db->query("SELECT * FROM teachers WHERE user_number = :user_number", [
-        'user_number' => $user_number
-    ])->find();
-}
 
-function number_of_students($grade)
-{
-    $db = new Database();
-    return $db->query("SELECT * FROM students WHERE class_id = :class_id", [
-        'class_id' => $grade
-    ])->fetchColumn();
-}
+$grade = $db->query("SELECT * FROM grades WHERE id = :id", [
+    'id' => $class_id
+])->find();
+$grades = $db->query("SELECT * FROM grades")->findAll();
 
-// $teacher = $db->query("SELECT * FROM teachers WHERE user_number = :user_number",[
-//     'user_number' => 'TEA001'
-// ])->find();
 
-// dd($teacher);
-// dd(teacher('TEA001'));
+
+
+
 
 view('partials/admin/head.php', [
     'title' => $title,
@@ -53,7 +44,8 @@ view('partials/admin/nav.php', [
 ]);
 
 view('admin/grades/show_one.view.php', [
-    'grades' => $grades
+    'grade' => $grade,
+    'students' => $students
 ]);
 
 view('partials/footer.php');

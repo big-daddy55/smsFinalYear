@@ -1,6 +1,6 @@
 <main class="home-section items-start bg-gray-200">
-    <div class=" p-4 bg-white w-5/6  mt-5">
-        <div class="flex justify-between items-center pb-3 border-b-2 border-red-500">
+    <div class=" p-4 bg-white w-5/6 flex flex-col items-center mt-5">
+        <div class="flex justify-between items-center pb-3 border-b-2 border-red-500 w-full">
             <h1 class="text-3xl font-bold">Grades</h1>
             <a href="/admin/teachers/create">
                 <button class="bg-red-500 text-white p-2">Add New Grade</button>
@@ -16,34 +16,23 @@
                 </tr>
             </thead>
 
+
+
             <tbody>
-                <?php foreach ($grades as $grade) : ?>
-                    <tr>
-                        <td><?= $grade['grade_name'] ?></td>
+                <?php if (empty($students)) { ?>
+                    <p class="bg-red-200 text-center inline py-2 px-3 mt-2 rounded-xl">No Students</p>
+                <?php } else { ?>
+                    <?php foreach ($students as $student) : ?>
+                        <tr>
+                            <td><?= $student['last_name'] ?><?= $student['first_name'] ?><?= $student['other_name'] ?></td>
+                            <td><?= $student['date_of_admission'] ?></td>
+                            <td><?= $student['gender'] ?></td>
+                            <td><?= $student['date_of_birth'] ?></td>
+                        </tr>
+                    <?php endforeach ?>
 
-                        <?php
-                        $number_of_students = number_of_students($grade['id']);
+                <?php } ?>
 
-                        error_log($number_of_students);
-                        ?>
-                        <td><?= $number_of_students ?></td>
-                        <!-- <td><?= $grade['number_of_student'] ?></td> -->
-
-                        <?php
-                        if (isset($grade['class_teacher_number'])) {
-                            $teacher = teacher($grade['class_teacher_number']);
-
-                        ?>
-                            <td><?= $teacher['first_name'] ?> <?= $teacher['other_name'] ?> <?= $teacher['last_name'] ?></td>
-
-                        <?php } else { ?>
-                            <td>No Teacher</td>
-                        <?php } ?>
-
-
-
-                    </tr>
-                <?php endforeach ?>
             </tbody>
         </table>
     </div>
