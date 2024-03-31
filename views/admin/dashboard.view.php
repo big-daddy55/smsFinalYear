@@ -1,4 +1,3 @@
-<main class="home-section">
-    <p>Hello <?= $name ?></p>
-    <p>Hey There</p>
+<main class="home-section bg-gray-200 rounded">
+    <p>Hello <?= $name ?> </p>
 </main>

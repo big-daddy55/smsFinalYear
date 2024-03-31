@@ -59,8 +59,9 @@ if (move_uploaded_file($_FILES["cv"]["tmp_name"], $targetFile)) {
         'address' => $address
     ]);
 
-    $db->query("INSERT INTO users (user_number, user_type, email, password) VALUES(:user_number, :user_type, :email, :password)", [
+    $db->query("INSERT INTO users (user_number, last_name, user_type, email, password) VALUES(:user_number,:last_name, :user_type, :email, :password)", [
         'user_number' => $user_number,
+        'last_name' => $last_name,
         'user_type' => 'facilitator',
         'email' => $email,
         'password' => 'default'
@@ -83,15 +84,9 @@ if (move_uploaded_file($_FILES["cv"]["tmp_name"], $targetFile)) {
         ]);
     }
 
-    // Update the database with the file path
-
-    // $cv_path = $db->quote($targetFile);
-    // // dd($profilePhotoPath);
-    // $db->query("UPDATE teachers SET cv = :cv_path WHERE user_number = :user_number", [
-    //     'cv_path' => $cv_path,
-    //     'user_number' => $user_number
-    // ]);
     $alert = "{$first_name} has been added.";
+
+    error_log("{$alert} created");
 
     header("Location: /admin/teachers/create?alert=" . urlencode($alert));
     die();

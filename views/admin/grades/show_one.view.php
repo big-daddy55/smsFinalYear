@@ -1,7 +1,7 @@
 <main class="home-section items-start bg-gray-200">
     <div class=" p-4 bg-white w-5/6 flex flex-col items-center mt-5">
         <div class="flex justify-between items-center pb-3 border-b-2 border-red-500 w-full">
-            <h1 class="text-3xl font-bold">Grades</h1>
+            <h1 class="text-3xl font-bold"><?= $grade['grade_name'] ?></h1>
             <a href="/admin/teachers/create">
                 <button class="bg-red-500 text-white p-2">Add New Grade</button>
             </a>
