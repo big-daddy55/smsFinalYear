@@ -24,8 +24,11 @@ $db = new Database;
 
 // If the email address is in the correct format, check if it's exist in the database
 if (empty($errors)) {
-    $user = $db->query('SELECT * FROM users WHERE email = :email', ['email' => $_POST['email']])->find();
-    if($user){
+    $user = $db->query('SELECT * FROM users WHERE email = :email OR user_number = :user_number', [
+        'email' => $_POST['email'],
+        'user_number' => $_POST['email']
+    ])->find();
+    if ($user) {
         if ($password === $user['password']) {
             login($user);
 
@@ -44,8 +47,8 @@ if (empty($errors)) {
             //     header('location: /admin/dashboard');
             // }
         }
-}
-$errors['auth'] = 'Email and Password does not match';
+    }
+    $errors['auth'] = 'Email and Password does not match';
     // if (!$user) {
     //     $errors['email'] = 'Account not found, Enter a valid email address';
     // }
@@ -79,4 +82,3 @@ terminateWithError($errors, 'controllers/guest/sessions/create.php');
 
 // echo "Submitted the form";
 // die();
-?>

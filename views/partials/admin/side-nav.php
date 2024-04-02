@@ -18,7 +18,8 @@
             <li class="<?= ($_SERVER['REQUEST_URI'] === '/admin/teachers/create' || $_SERVER['REQUEST_URI'] === '/admin/teachers/show') ? 'active' : '' ?>">
                 <div class="icon-link">
                     <a href="#">
-                        <i class='bx bx-collection'></i>
+                        <!-- <i class='bx bx-collection'></i> -->
+                        <i class='bx bx-user-pin'></i>
                         <span class="link_name">Facilitators</span>
                     </a>
                     <i class='bx bxs-chevron-down arrow'></i>
@@ -46,16 +47,16 @@
             <li>
                 <div class="icon-link">
                     <a href="#">
-                        <i class='bx bx-book-alt'></i>
+                        <i class='bx bx-chalkboard'></i>
                         <span class="link_name">Grades</span>
                     </a>
                     <i class='bx bxs-chevron-down arrow'></i>
                 </div>
-                <ul class="sub-menu"> 
+                <ul class="sub-menu">
                     <li><a class="link_name" href="#">Grades</a></li>
                     <li><a href="/admin/grades/show">All Grades</a></li>
-                    <?php foreach($grades as $grade): ?>
-                    <li><a href="/admin/grades/"><?=$grade['grade_name']?></a></li>
+                    <?php foreach ($grades as $grade) : ?>
+                        <li><a href="/admin/grades/"><?= $grade['grade_name'] ?></a></li>
 
                     <?php endforeach ?>
                 </ul>

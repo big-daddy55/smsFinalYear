@@ -2,8 +2,8 @@
     <div class=" p-4 bg-white w-5/6 flex flex-col items-center mt-5">
         <div class="flex justify-between items-center pb-3 border-b-2 border-red-500 w-full">
             <h1 class="text-3xl font-bold"><?= $grade['grade_name'] ?></h1>
-            <a href="/admin/teachers/create">
-                <button class="bg-red-500 text-white p-2">Add New Grade</button>
+            <a href="/admin/students/create">
+                <button class="bg-red-500 text-white p-2">Add New Student</button>
             </a>
         </div>
         <table class="table table table-striped table-bordered mt-3">
@@ -24,7 +24,7 @@
                 <?php } else { ?>
                     <?php foreach ($students as $student) : ?>
                         <tr>
-                            <td><?= $student['last_name'] ?><?= $student['first_name'] ?><?= $student['other_name'] ?></td>
+                            <td><?= $student['last_name'] ?> <?= $student['first_name'] ?> <?= $student['other_name'] ?></td>
                             <td><?= $student['date_of_admission'] ?></td>
                             <td><?= $student['gender'] ?></td>
                             <td><?= $student['date_of_birth'] ?></td>

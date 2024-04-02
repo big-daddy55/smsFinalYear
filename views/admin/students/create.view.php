@@ -31,14 +31,7 @@
             </div>
         </div>
 
-        <!-- <div class="form-group">
-            <label for="" class="text-red-500 mb-2">Email:</label>
-            <input required type="email" placeholder="eg. derrick@gmail.com" name="email" class="form-input">
-        </div>
-        <div class="form-group">
-            <label for="" class="text-red-500 mb-2">Phone number:</label>
-            <input required type="text" placeholder="eg. 0555555555" name="contact" class="form-input">
-        </div> -->
+
         <div class="form-group">
             <label for="" class="text-red-500 mb-2">Digital Address:</label>
             <input required type="text" placeholder="e.g GA-000-0000" name="address" class="form-input">
@@ -55,10 +48,7 @@
             <label for="" class="text-red-500 mb-2">Height(cm):</label>
             <input required type="text" placeholder="e.g 180" name="height" class="form-input">
         </div>
-        <!-- <div class="form-group">
-            <label for="" class="text-red-500 mb-2">Blood Group:</label>
-            <input required type="text" placeholder="e.g 0-" name="blood_group" class="form-input">
-        </div> -->
+
 
         <div class="form-group">
             <label for="" class="text-red-500 mb-2">Blood Group:</label>
@@ -75,7 +65,7 @@
         </div>
         <div class="form-group">
             <label for="" class="text-red-500 mb-2">Grade:</label>
-            <select name="class" class="form-input bg-transparent">
+            <select name="grade" class="form-input bg-transparent">
                 <?php foreach ($grades as $grade) : ?>
                     <option value="<?= $grade['id'] ?>"><?= $grade['grade_name'] ?></option>
                 <?php endforeach ?>
@@ -116,10 +106,7 @@
             <label for="" class="text-red-500 mb-2">Guardian's Contact:</label>
             <input required type="text" placeholder="e.g 0555555555" name="guardian_contact" class="form-input">
         </div>
-        <div class="form-group">
-            <label for="" class="text-red-500 mb-2">Guardian's Contact:</label>
-            <input required type="text" placeholder="e.g 0555555555" name="guardian_contact" class="form-input">
-        </div>
+
         <div class="form-group">
             <label for="" class="text-red-500 mb-2">Guardian's occupation:</label>
             <input required type="text" placeholder="e.g Doctor" name="guardian_occupation" class="form-input">
