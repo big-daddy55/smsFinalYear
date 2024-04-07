@@ -6,7 +6,20 @@ use Core\Database;
 
 $db = new Database();
 $grades = $db->query('SELECT * FROM grades')->findAll();
-$teachers = $db->query('SELECT * FROM teachers')->findAll();
+
+
+
+if (isset($_GET['teacher_type'])) {
+    $teacher_type = $_GET['teacher_type'];
+    $teachers = $db->query('SELECT * FROM teachers WHERE teacher_type = :teacher_type', [
+        'teacher_type' => $_GET['teacher_type']
+    ])->findAll();
+} else {
+    $teacher_type = NULL;
+    $teachers = $db->query('SELECT * FROM teachers')->findAll();
+}
+
+// dd($teacher_type);
 
 view('partials/admin/head.php', [
     'title' => 'Dashboard'
@@ -22,6 +35,7 @@ view('partials/admin/nav.php', [
 
 view('admin/teachers/show.view.php', [
     'name' => $_SESSION['user']['last_name'],
-    'teachers' => $teachers
+    'teachers' => $teachers,
+    'teacher_type' => $teacher_type
 ]);
 view('partials/footer.php');

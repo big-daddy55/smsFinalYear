@@ -1,4 +1,4 @@
-<main class="home-section items-center bg-gray-200 flex-col pt-4">
+<main class="home-section items-center bg-gray-200 flex-col pt-4 rounded">
     <?php if (isset($alert)) : ?>
         <p class="text-center bg-red-200 py-2 px-4 rounded mb-3 "><?= $alert ?></p>
     <?php endif ?>

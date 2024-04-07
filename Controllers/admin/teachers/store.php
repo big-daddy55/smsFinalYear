@@ -77,19 +77,19 @@ if (move_uploaded_file($_FILES["cv"]["tmp_name"], $targetFile)) {
             'user_number' => $user_number,
             'class_id' => $class
         ]);
+
+        $alert = "{$first_name} has been added as Grade {$class_id} Teacher.";
     } elseif ($teacher_type === "subject_teacher") {
         $db->query("INSERT INTO subject_teachers (user_number, subject) VALUES(:user_number, :subject)", [
             'user_number' => $user_number,
             'subject' => $subject
         ]);
+
+        $alert = "{$first_name} has been added as {$subject} Teacher.";
     }
 
-    $alert = "{$first_name} has been added.";
-
-    error_log("{$alert} created");
 
     header("Location: /admin/teachers/create?alert=" . urlencode($alert));
+
     die();
 }
-
-error_log('not completed');

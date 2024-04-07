@@ -46,19 +46,14 @@
             </li>
             <li>
                 <div class="icon-link">
-                    <a href="#">
+                    <a href="/admin/grades/show">
                         <i class='bx bx-chalkboard'></i>
                         <span class="link_name">Grades</span>
                     </a>
-                    <i class='bx bxs-chevron-down arrow'></i>
+                    <!-- <i class='bx bxs-chevron-down arrow'></i> -->
                 </div>
-                <ul class="sub-menu">
-                    <li><a class="link_name" href="#">Grades</a></li>
-                    <li><a href="/admin/grades/show">All Grades</a></li>
-                    <?php foreach ($grades as $grade) : ?>
-                        <li><a href="/admin/grades/"><?= $grade['grade_name'] ?></a></li>
-
-                    <?php endforeach ?>
+                <ul class="sub-menu blank">
+                    <li><a class="link_name" href="/admin/grades/show">Grades</a></li>
                 </ul>
             </li>
             <li>

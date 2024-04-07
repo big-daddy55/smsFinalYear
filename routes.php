@@ -26,7 +26,7 @@ $router->get('/admin/students/show', 'controllers/admin/students/show.php')->onl
 $router->get('/admin/students/create', 'controllers/admin/students/create.php')->only('admin');
 $router->post('/admin/students/store', 'controllers/admin/students/store.php')->only('admin');
 $router->get('/admin/grades/show', 'controllers/admin/grades/show.php')->only('admin');
-$router->get("/admin/grade/show", 'controllers/admin/grades/show_one.php')->only('admin');
+
 
 /* ------------------- Teacher Routes ------------------- */
 $router->get('/teacher/dashboard', 'controllers/facilitator/index.php')->only('facilitator');
