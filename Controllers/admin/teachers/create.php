@@ -12,6 +12,8 @@ $grades = $db->query('SELECT * FROM grades')->findAll();
 
 $alert = isset($_GET['alert']) ? urldecode($_GET['alert']) : NULL;
 
+dd($alert);
+
 
 
 $title = 'Add Teacher';

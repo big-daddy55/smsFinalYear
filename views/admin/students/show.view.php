@@ -1,5 +1,5 @@
-<main class="home-section items-start bg-gray-200 rounded">
-    <div class=" p-4 bg-white w-5/6 flex flex-col items-center mt-5">
+<main class="home-section items-start bg-gray-200 rounded py-5">
+    <div class=" p-4 bg-white w-5/6 flex flex-col items-center">
         <div class="flex justify-between items-center pb-3 border-b-2 border-red-500 w-full">
             <h1 class="text-3xl font-bold"><?= $grade['grade_name'] ?></h1>
             <a href="/admin/students/create">

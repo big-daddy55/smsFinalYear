@@ -26,6 +26,10 @@ $router->get('/admin/students/show', 'controllers/admin/students/show.php')->onl
 $router->get('/admin/students/create', 'controllers/admin/students/create.php')->only('admin');
 $router->post('/admin/students/store', 'controllers/admin/students/store.php')->only('admin');
 $router->get('/admin/grades/show', 'controllers/admin/grades/show.php')->only('admin');
+$router->get('/admin/academics/calendar', 'controllers/admin/academics/calendar/show.php')->only('admin');
+$router->get('/admin/academics/event/create', 'controllers/admin/academics/event/create.php')->only('admin');
+$router->get('/admin/academics/year/create', 'controllers/admin/academics/year/create.php')->only('admin');
+$router->post('/admin/academics/year/store', 'controllers/admin/academics/year/store.php')->only('admin');
 
 
 /* ------------------- Teacher Routes ------------------- */

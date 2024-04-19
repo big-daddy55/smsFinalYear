@@ -1,5 +1,5 @@
-<main class="home-section items-start bg-gray-200 rounded">
-    <div class=" p-4 bg-white w-5/6  mt-5">
+<main class="home-section items-start bg-gray-200 rounded py-5">
+    <div class=" p-4 bg-white w-5/6">
         <div class="flex justify-between items-center pb-3 border-b-2 border-red-500">
             <h1 class="text-3xl font-bold">Grades</h1>
             <a href="/admin/teachers/create">
