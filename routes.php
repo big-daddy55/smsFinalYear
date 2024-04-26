@@ -28,6 +28,8 @@ $router->post('/admin/students/store', 'controllers/admin/students/store.php')->
 $router->get('/admin/grades/show', 'controllers/admin/grades/show.php')->only('admin');
 $router->get('/admin/academics/calendar', 'controllers/admin/academics/calendar/show.php')->only('admin');
 $router->get('/admin/academics/event/create', 'controllers/admin/academics/event/create.php')->only('admin');
+$router->post('/admin/academics/event/store', 'controllers/admin/academics/event/store.php')->only('admin');
+$router->get('/admin/academics/year/show', 'controllers/admin/academics/year/show.php')->only('admin');
 $router->get('/admin/academics/year/create', 'controllers/admin/academics/year/create.php')->only('admin');
 $router->post('/admin/academics/year/store', 'controllers/admin/academics/year/store.php')->only('admin');
 

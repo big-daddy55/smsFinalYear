@@ -11,6 +11,9 @@ $years = $db->query('SELECT * FROM academic_year')->findAll();
 
 $title = 'Add Event';
 
+$alert = isset($_GET['alert']) ? urldecode($_GET['alert']) : NULL;
+
+
 view('partials/admin/head.php', [
     'title' => $title
 ]);
@@ -24,8 +27,16 @@ view('partials/admin/nav.php', [
     'name' => $_SESSION['user']['last_name']
 ]);
 
-view('admin/academics/event/create.view.php', [
-    'years' => $years
-]);
+
+if (isset($alert)) {
+    view('admin/academics/event/create.view.php', [
+        'years' => $years,
+        'alert' => $alert
+    ]);
+} else {
+    view('admin/academics/event/create.view.php', [
+        'years' => $years
+    ]);
+}
 
 view('partials/footer.php');

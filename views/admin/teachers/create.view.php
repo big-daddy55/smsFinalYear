@@ -1,4 +1,4 @@
-<main class="home-section items-center bg-gray-200 flex-col pt-4 rounded">
+<main class="home-section items-center bg-gray-200 flex-col py-5 rounded">
     <?php if (isset($alert)) : ?>
         <p class="text-center bg-red-200 py-2 px-4 rounded mb-3 "><?= $alert ?></p>
     <?php endif ?>
@@ -98,18 +98,19 @@
         </div>
     </form>
 
-    <script>
-        function toggleInput(inputName) {
-            var classInput = document.getElementsByName("class")[0];
-            var subjectInput = document.getElementsByName("subject")[0];
-
-            if (inputName === "class") {
-                classInput.disabled = false;
-                subjectInput.disabled = true;
-            } else if (inputName === "subject") {
-                classInput.disabled = true;
-                subjectInput.disabled = false;
-            }
-        }
-    </script>
 </main>
+<script>
+    function toggleInput(inputName) {
+        var classInput = document.getElementsByName("class")[0];
+        var subjectInput = document.getElementsByName("subject")[0];
+
+        if (inputName === "class") {
+            classInput.disabled = false;
+            subjectInput.disabled = true;
+        } else if (inputName === "subject") {
+            classInput.disabled = true;
+            subjectInput.disabled = false;
+        }
+    }
+</script>
+<script src="/../resource/script/admin/alert.js"></script>

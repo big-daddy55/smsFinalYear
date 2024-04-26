@@ -9,7 +9,16 @@ $db = new Database();
 
 
 
-$years = $db->query("SELECT * FROM academic_year")->findAll();
+$year = $db->query("SELECT * FROM academic_year WHERE status = :status",[
+    'status' => "active"
+])->find();
+
+
+$events = $db->query("SELECT * FROM events WHERE year = :year ORDER BY start_date", [
+    'year' => $year['year']
+])->findAll();
+
+// dd($events);
 
 
 
@@ -30,8 +39,9 @@ view('partials/admin/nav.php', [
     'name' => $_SESSION['user']['last_name']
 ]);
 
-view('admin/acadeemics/calendar/show.view.php', [
-    'year' => $years
+view('admin/academics/calendar/show.view.php', [
+    'year' => $year,
+    'events' => $events
 ]);
 
 view('partials/footer.php');

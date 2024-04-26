@@ -17,7 +17,6 @@ view('partials/admin/head.php', [
 ]);
 
 view('partials/admin/side-nav.php', [
-    'grades' => $grades,
     'name' => $_SESSION['user']['last_name'],
     'user_type' => $_SESSION['user']['user_type']
 ]);

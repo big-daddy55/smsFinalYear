@@ -66,10 +66,9 @@
                 </div>
                 <ul class="sub-menu">
                     <li><a class="link_name" href="#">Academics</a></li>
-                    <li><a href="/admin/academics/year/create">Create Academic Year</a></li>
+                    <li><a href="/admin/academics/year/show">Academic Year</a></li>
                     <li><a href="/admin/academics/event/create">Add Academic Events</a></li>
-                    <li><a href="/admin/academics/calendar/show">Calendar</a></li>
-                    <li><a href="/admin/students/show">View Students</a></li>
+                    <li><a href="/admin/academics/calendar">Calendar</a></li>
                 </ul>
             </li>
             <li>

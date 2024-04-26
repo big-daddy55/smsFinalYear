@@ -11,19 +11,26 @@
         input:active {
             border: 1px solid red;
         }
+
+        #alert {
+            transition: opacity 1s ease-out;
+            opacity: 1;
+        }
     </style>
     <div class="bg-white w-4/5 p-4 flex flex-col items-center h-full">
         <h1 class="text-xl font-semibold">Create Academic Calendar</h1>
-
-        <form action="" class="w-full flex flex-col items-center">
+        <?php if (isset($alert)) : ?>
+            <p class="text-center bg-red-200 py-2 px-4 rounded mt-2 mb-2" id="alert"><?= $alert ?></p>
+        <?php endif ?>
+        <form action="/admin/academics/event/store" class="w-full flex flex-col items-center" method="POST">
             <table class="table  w-2/3">
                 <tbody>
                     <tr>
                         <td>Academic Year</td>
                         <td>
-                            <select name="academic_year" id="" class="bg-white">
+                            <select name="year" id="" class="bg-white" required>
                                 <?php foreach ($years as $year) : ?>
-                                    <option value=""><?= $year['year'] ?></option>
+                                    <option value="<?= $year['year'] ?>" class="bg-white"><?= $year['year'] ?></option>
                                 <?php endforeach ?>
                             </select>
                         </td>
@@ -33,23 +40,23 @@
                         <td>Events</td>
                         <td>
                             <div class="flex flex-col justify-between h-32">
-                                <input type="text" placeholder="Event Name">
+                                <input type="text" placeholder="Event Name" name="event_name" required>
                                 <div class="inline-grid grid-cols-3">
                                     <label for="">Start Date:</label>
                                     <p></p>
                                     <label for="" class="pr-5">End Date:</label>
                                 </div>
                                 <div class="inline-grid grid-cols-3 items-center ">
-                                    <input type="date">
+                                    <input type="date" name="start_date" required>
                                     <div class="flex justify-center">
                                         <hr class="w-5 border-2">
                                     </div>
-                                    <input type="date">
+                                    <input type="date" name="end_date" required>
 
                                 </div>
                             </div>
 
-                            <!-- <button>Add Event</button> -->
+
                         </td>
                     </tr>
 
@@ -67,11 +74,11 @@
                         <td>School Status</td>
                         <td class="flex justify-between">
                             <div class="flex">
-                                <input type="radio" name="status" id="" class="mr-4">
+                                <input type="radio" name="school_status" id="" class="mr-4" value="open" required>
                                 <label for="status">Open</label>
                             </div>
                             <div class="flex pr-24 ">
-                                <input type="radio" name="status" id="" class="mr-4">
+                                <input type="radio" name="school_status" id="" class="mr-4" value="closed" required>
                                 <label for="status">Closed</label>
                             </div>
 
@@ -87,3 +94,5 @@
         </form>
 
 </main>
+
+<script src="/../resource/script/admin/alert.js"></script>

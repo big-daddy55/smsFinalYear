@@ -1,4 +1,4 @@
-<main class="home-section items-center bg-gray-200 flex-col pt-4 rounded">
+<main class="home-section items-center bg-gray-200 flex-col py-5 rounded">
     <?php if (isset($alert)) : ?>
         <p class="text-center bg-red-200 py-2 px-4 rounded mb-3 "><?= $alert ?></p>
     <?php endif ?>
@@ -121,23 +121,25 @@
         </div>
     </form>
 
-    <script>
-        function toggleInput(inputName) {
-            let otherInput = document.getElementById("other-input");
-            let otherSelector = document.getElementById("other-selector");
-
-
-            if (inputName === "other") {
-                otherInput.disabled = false;
-
-            } else {
-                otherInput.disabled = true;
-            }
-        }
-
-        function updateOther(value) {
-            lowercase_value = value.toLowerCase();
-            document.getElementById("other-selector").value = lowercase_value;
-        }
-    </script>
 </main>
+<script>
+    function toggleInput(inputName) {
+        let otherInput = document.getElementById("other-input");
+        let otherSelector = document.getElementById("other-selector");
+
+
+        if (inputName === "other") {
+            otherInput.disabled = false;
+
+        } else {
+            otherInput.disabled = true;
+        }
+    }
+
+    function updateOther(value) {
+        lowercase_value = value.toLowerCase();
+        document.getElementById("other-selector").value = lowercase_value;
+    }
+</script>
+
+<script src="/../resource/script/admin/alert.js"></script>

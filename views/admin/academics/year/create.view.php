@@ -11,7 +11,7 @@
             border: 1px solid red;
         }
 
-        #alert{
+        #alert {
             transition: opacity 1s ease-out;
             opacity: 1;
         }
@@ -25,21 +25,21 @@
             <div class="flex justify-between">
                 <div>
                     <label for="">Year</label>
-                    <input type="text" name="year" placeholder="2023/2024">
+                    <input type="text" required name="year" placeholder="2023/2024">
                 </div>
                 <div>
                     <label for="">Start Date</label>
-                    <input type="date" name="year_start_date" id="">
+                    <input type="date" required name="year_start_date" id="">
                 </div>
                 <div>
                     <label for="">End Date</label>
-                    <input type="date" name="year_end_date" id="">
+                    <input type="date" required name="year_end_date" id="">
                 </div>
             </div>
 
             <div class="flex mt-4">
                 <label for="" class="mr-2">Number of Terms</label>
-                <select name="number_of_terms" id="quantity" class="px-2" onchange="createFormGroups()">
+                <select name="number_of_terms" id="quantity" class="px-2" required onchange="createFormGroups()">
                     <option value="">0</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -57,42 +57,7 @@
                     </tr>
                 </thead>
                 <tbody id="formGroupsContainer">
-                    <!-- <tr id="form_group">
-                        <td>1</td>
-                        <td>
-                            <input type="text" placeholder="Term 1" name="term_name">
-                        </td>
-                        <td>
-                            <input type="date" name="term_start_date">
-                        </td>
-                        <td>
-                            <input type="date" name="term_start_date">
-                        </td>
-                    </tr> -->
-                    <!-- <tr>
-                        <td>2</td>
-                        <td>
-                            <input type="text" placeholder="Term 2">
-                        </td>
-                        <td>
-                            <input type="date">
-                        </td>
-                        <td>
-                            <input type="date">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>
-                            <input type="text" placeholder="Term 3">
-                        </td>
-                        <td>
-                            <input type="date">
-                        </td>
-                        <td>
-                            <input type="date">
-                        </td>
-                    </tr> -->
+
 
                 </tbody>
 
@@ -132,25 +97,11 @@
             // formGroup.innerHTML = "<label for='input" + i + "'>Input " + i + ":</label>" +
             //     "<input type='text' id='input" + i + "' name='input" + i + "'>";
             formGroup.innerHTML = "<td>" + i + "</td>" +
-                "<td><input type='text' placeholder='Term " + i + "' name='term_name[]'></td>" +
-                "<td> <input type = 'date' name = 'term_start_date[]' > </td>" + "<td> <input type = 'date' name = 'term_end_date[]'></td>";
+                "<td><input type='text' required placeholder='Term " + i + "' name='term_name[]'></td>" +
+                "<td> <input type = 'date' required name = 'term_start_date[]' > </td>" + "<td> <input type = 'date' required name = 'term_end_date[]'></td>";
             formGroupsContainer.appendChild(formGroup);
         }
     }
-
-    window.onload = function(){
-        setTimeout(function(){
-            var alert = document.getElementById("alert");
-
-            if(alert){
-                alert.style.opacity = "0";
-
-                setTimeout(function(){
-                    alert.style.display = "none";
-                }, 1000)
-            }
-        }, 3000)
-    };
-
-
 </script>
+
+<script src="/../resource/script/admin/alert.js"></script>
