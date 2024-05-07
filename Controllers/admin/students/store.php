@@ -33,12 +33,12 @@ $db->query("INSERT INTO guardians ( user_number, guardian_name, guardian_type, c
     'address' => $address
 ]);
 
-$db->query("INSERT INTO users (user_number, user_type, last_name, email, password) VALUES(:user_number, :user_type, :email, :password, :last_name)", [
+$db->query("INSERT INTO users (user_number, user_type, last_name, email, password) VALUES(:user_number, :user_type, :last_name, :email, :password)", [
     'user_number' => $guardian_user_number,
     'user_type' => 'parent',
+    'last_name' => $guardian_name,
     'email' => $guardian_email,
-    'password' => 'default',
-    'last_name' => $guardian_name
+    'password' => 'default'
 ]);
 
 
