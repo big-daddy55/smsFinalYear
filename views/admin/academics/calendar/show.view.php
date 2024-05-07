@@ -1,7 +1,7 @@
 <main class="home-section items-start bg-gray-200 rounded py-5">
     <div class=" p-4 bg-white w-5/6 flex flex-col items-center">
         <div class="flex justify-between items-center pb-3 border-b-2 border-red-500 w-full">
-            <h1 class="text-3xl font-bold"><?= $year['year']?></h1>
+            <h1 class="text-3xl font-bold"><?= $year['year'] ?> Academic Calender</h1>
             <a href="/admin/academics/year/create">
                 <button class="bg-red-500 text-white p-2">Print Calendar</button>
             </a>
@@ -12,21 +12,22 @@
         <?php if (empty($events)) { ?>
             <p class="bg-red-200 text-center inline py-2 px-3 mt-2 rounded-xl">No Academic Events</p>
         <?php } else { ?>
-            <?php foreach ($events as $events) : ?>
-                <table class="table table table-bordered mt-3">
-                    <thead>
-                        <tr>
-                            <th>Starts On</th>
-                            <th>Ends On</th>
-                            <th>Event</th>
-                            <th>Type</th>
-                            <th>Status</th>
-                        </tr>
-                    </thead>
+            <table class="table table-bordered mt-3">
+                <thead>
+                    <h1></h1>
+                    <tr>
+                        <th>Starts On</th>
+                        <th>Ends On</th>
+                        <th>Event</th>
+                        <th>Type</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
 
 
 
-                    <tbody>
+                <tbody>
+                    <?php foreach ($events as $events) : ?>
                         <tr>
                             <td><?= $events['start_date'] ?></td>
                             <td><?= $events['end_date'] ?></td>
@@ -38,7 +39,7 @@
 
                 <?php } ?>
 
-                    </tbody>
-                </table>
+                </tbody>
+            </table>
     </div>
 </main>
