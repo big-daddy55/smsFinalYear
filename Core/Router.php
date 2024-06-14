@@ -5,13 +5,14 @@ use Core\Middleware\Auth;
 use Core\Middleware\Guest;
 use Core\Middleware\Admin;
 use Core\Middleware\Middleware;
+use JetBrains\PhpStorm\NoReturn;
 
 class Router
 {
 
-    protected $routes = [];
+    protected array $routes = [];
 
-    public function add($uri, $controller, $method)
+    public function add($uri, $controller, $method):Router
     {
         $this->routes[] = [
             'uri' => $uri,
@@ -22,29 +23,29 @@ class Router
 
         return $this;
     }
-    public function get($uri, $controller)
+    public function get($uri, $controller):Router
     {
         return $this->add($uri, $controller, 'GET');
 
     }
-    public function post($uri, $controller)
+    public function post($uri, $controller):Router
     {
         return $this->add($uri, $controller, 'POST');
     }
-    public function PATCH($uri, $controller)
+    public function PATCH($uri, $controller):Router
     {
         return $this->add($uri, $controller, 'POST');
     }
-    public function put($uri, $controller)
+    public function put($uri, $controller):Router
     {
         return $this->add($uri, $controller, 'PUT');
     }
-    public function delete($uri, $controller)
+    public function delete($uri, $controller):Router
     {
         return $this->add($uri, $controller, 'DELETE');
     }
 
-    public function only($key)
+    public function only($key):Router
     {
         $this->routes[array_key_last($this->routes)]['middleware'] = $key;
         return $this;
@@ -67,7 +68,7 @@ class Router
 
     }
 
-    protected function abort($code = 404)
+    #[NoReturn] protected function abort($code = 404): void
     {
         http_response_code($code);
         view('/errors/404.php');
@@ -80,4 +81,3 @@ class Router
 
 
 
-?>

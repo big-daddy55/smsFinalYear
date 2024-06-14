@@ -8,6 +8,7 @@
 // ];
 
 /* ------------------- Guest Routes ------------------- */
+global $router;
 $router->get('/boot', 'controllers/boots.php');
 $router->get('/', 'controllers/guest/index.php')->only('guest');
 $router->get('/about', 'controllers/guest/about.php')->only('guest');
@@ -34,6 +35,11 @@ $router->post('/admin/academics/event/store', 'controllers/admin/academics/event
 $router->get('/admin/academics/year/show', 'controllers/admin/academics/year/show.php')->only('admin');
 $router->get('/admin/academics/year/create', 'controllers/admin/academics/year/create.php')->only('admin');
 $router->post('/admin/academics/year/store', 'controllers/admin/academics/year/store.php')->only('admin');
+$router->get('/admin/academics/timetable', 'controllers/admin/academics/timetable/show.php')->only('admin');
+$router->get('/admin/academics/timetable/create', 'controllers/admin/academics/timetable/create.php')->only('admin');
+$router->post('/admin/academics/timetable/store', 'controllers/admin/academics/timetable/store.php')->only('admin');
+$router->get('/test', 'controllers/test.php')->only('admin');
+$router->post('/test', 'controllers/test.php')->only('admin');
 
 
 /* ------------------- Teacher Routes ------------------- */

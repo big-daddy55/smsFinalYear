@@ -12,7 +12,7 @@ $db = new Database();
 
 if (isset($_GET['grade'])) {
     $class_id = $_GET['grade'];
-}else{
+} else {
     $class_id = 1;
 }
 
@@ -40,7 +40,6 @@ view('partials/admin/head.php', [
 ]);
 
 view('partials/admin/side-nav.php', [
-    'grades' => $grades,
     'name' => $_SESSION['user']['last_name'],
     'user_type' => $_SESSION['user']['user_type']
 ]);

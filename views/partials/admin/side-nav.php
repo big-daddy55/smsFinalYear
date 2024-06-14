@@ -69,6 +69,7 @@
                     <li><a href="/admin/academics/year/show">Academic Year</a></li>
                     <li><a href="/admin/academics/event/create">Add Academic Events</a></li>
                     <li><a href="/admin/academics/calendar">Calendar</a></li>
+                    <li><a href="/admin/academics/timetable">Timetable</a></li>
                 </ul>
             </li>
             <li>

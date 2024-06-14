@@ -1,34 +1,34 @@
 <?php
 
 use Core\Database;
+use JetBrains\PhpStorm\NoReturn;
 
 
-
-function urlIs($value)
+function urlIs($value):bool
 {
     return $_SERVER['REQUEST_URI'] === $value;
 }
 
-function base_path($path, $attributes = [])
+function base_path($path, $attributes = []):string
 {
     extract($attributes);
     return BASE_PATH . $path;
 }
 
-function view($path, $attributes = [])
+function view($path, $attributes = []): void
 {
     extract($attributes);
     // dd($attributes);
     require base_path('views/' . $path);
 }
 
-function dd($obj)
+#[NoReturn] function dd($obj)
 {
     var_dump($obj);
     die();
 }
 
-function login($user)
+function login($user):array
 {
     $_SESSION['user'] = [
         'id' => $user['user_id'],
@@ -41,7 +41,7 @@ function login($user)
     return $_SESSION['user'];
 }
 
-function checkuser($FormUserType)
+function checkuser($FormUserType): void
 {
     $DatabaseUserTypes = require base_path('database/user_types.php');
 
@@ -54,7 +54,7 @@ function checkuser($FormUserType)
     }
 }
 
-function terminateWithError($errors, $path)
+function terminateWithError($errors, $path): void
 {
     if (!empty($errors)) {
         require base_path($path, [
@@ -64,7 +64,7 @@ function terminateWithError($errors, $path)
     }
 }
 
-function logout()
+function logout(): void
 {
 
     $_SESSION = [];
@@ -74,7 +74,7 @@ function logout()
     setcookie('PHPSESSID', '', time() - 3600, $params['path'], $params['domain'], $params['secure'], $params['httponly']);
 }
 
-function generateUserId($role, $db_table)
+function generateUserId($role, $db_table): string
 {
     // Define role prefixes
     $rolePrefixes = [
@@ -102,18 +102,7 @@ function generateUserId($role, $db_table)
     $newNumericPart = $lastUserId + 1;
 
     // Concatenate the prefix and the random number
-
-    $user_number = $prefix . sprintf('%03d', $newNumericPart);
-
-    return $user_number;
+    return $prefix . sprintf('%03d', $newNumericPart);
 }
 
-// function generatePassword(){
-//     $characters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
-//     $password = '';
 
-//     for ($i = 0; $i <8; $i++){
-//         $password .= $characters[rand(0, strlen($characters) - 1)];
-//     }
-//     return $password;
-// }
